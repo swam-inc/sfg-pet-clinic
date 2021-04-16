@@ -97,7 +97,7 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:swam-inc/sfg-pet-clinic.git</developerConnection>
-      <tag>sfg-pet-clinic-0.0.5</tag>
+      <tag>sfg-pet-clinic-0.0.6</tag>
   </scm>
 
 </project>
