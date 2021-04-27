@@ -60,7 +60,12 @@
                     <goals>install</goals>
                 </configuration>
             </plugin>
-        </plugins>
+            <plugin>
+    		<groupId>org.apache.commons</groupId>
+    		<artifactId>lang3</artifactId>
+    		<version>3.1.0</version>
+           </plugin>
+           </plugins>
     </build>
 
     <scm>
