@@ -12,7 +12,7 @@ public abstract class AbstractMapService <T, ID>{
         return map.get(id);
     }
     Set<T> findAll(){
-        return new HashSet<>(map.values());
+        return new HashSet<T>(map.values());
     }
     T save(ID id, T object){
         map.put(id, object);
