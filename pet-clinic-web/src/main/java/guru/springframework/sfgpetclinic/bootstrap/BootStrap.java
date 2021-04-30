@@ -14,11 +14,12 @@ public class BootStrap implements CommandLineRunner {
     private         VetServiceMap vetServiceMap ;
     private         PetServiceMap petServiceMap ;
 
-    public BootStrap(){
-        ownerServiceMap = new OwnerServiceMap();
-        vetServiceMap = new VetServiceMap();
-        petServiceMap = new PetServiceMap();
+    public BootStrap(OwnerServiceMap ownerServiceMap, VetServiceMap vetServiceMap, PetServiceMap petServiceMap) {
+        this.ownerServiceMap = ownerServiceMap;
+        this.vetServiceMap = vetServiceMap;
+        this.petServiceMap = petServiceMap;
     }
+
     @Override
     public void run(String... args) throws Exception {
         Owner owner1 = new Owner();
