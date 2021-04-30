@@ -3,12 +3,13 @@ package guru.springframework.sfgpetclinic.service.map;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.service.CrudService;
 import guru.springframework.sfgpetclinic.service.map.AbstractMapService;
+import guru.springframework.sfgpetclinic.service.vetService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements vetService {
     @Override
     public Vet findById(Long id) {
         return super.findById(id);
