@@ -18,4 +18,14 @@ public class OwnerController {
       model.addAttribute("owners", ownerServiceMap.findAll());
     return "owner/index";
   }
+
+  @RequestMapping({"owners/find"})
+  public String getErrorPage( ){
+    return "generic_not_found_page";
+  }
+
+  @RequestMapping({"oups"})
+    public String theErrorTagPage(){
+      return "generic_not_found_page";
+    }
 }
