@@ -3,7 +3,8 @@ package guru.springframework.sfgpetclinic.model;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
+//@Entity
+@MappedSuperclass
 @Table(name="visits")
 public class Visit extends  BaseEntity{
     @Column(name="local_date")

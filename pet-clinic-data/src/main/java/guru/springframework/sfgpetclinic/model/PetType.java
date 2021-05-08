@@ -5,7 +5,8 @@ import javax.persistence.*;
 /**
  * Created by jt on 7/13/18.
  */
-@Entity
+//@Entity
+    @MappedSuperclass
 @Table(name="pettype")
 public class PetType extends BaseEntity {
 

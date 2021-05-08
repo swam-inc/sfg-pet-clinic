@@ -7,7 +7,8 @@ import java.util.Set;
 /**
  * Created by jt on 7/13/18.
  */
-@Entity
+//@Entity
+@MappedSuperclass
 @Table(name="owners")
 public class Owner extends Person {
     @Column(name="address")

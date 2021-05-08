@@ -8,7 +8,8 @@ import java.util.Set;
 /**
  * Created by jt on 7/13/18.
  */
-@Entity
+//@Entity
+    @MappedSuperclass
 @Table(name="pets")
 public class Pet extends BaseEntity {
     @Column(name="name")
