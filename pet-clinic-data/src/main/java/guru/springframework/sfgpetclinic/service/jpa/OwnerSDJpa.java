@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
+@Profile("jpaservice")
 public class OwnerSDJpa implements OwnerService {
 
     private final OwnerRepository ownerRepository;

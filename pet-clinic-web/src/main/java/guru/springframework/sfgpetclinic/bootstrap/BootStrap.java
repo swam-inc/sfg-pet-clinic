@@ -1,7 +1,7 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.*;
-import guru.springframework.sfgpetclinic.service.SpecialtyService;
+import guru.springframework.sfgpetclinic.service.*;
 import guru.springframework.sfgpetclinic.service.map.OwnerServiceMap;
 import guru.springframework.sfgpetclinic.service.map.PetServiceMap;
 import guru.springframework.sfgpetclinic.service.map.PetTypeServiceMap;
@@ -13,19 +13,21 @@ import java.time.LocalDate;
 
 @Component
 public class BootStrap implements CommandLineRunner {
-    private         OwnerServiceMap ownerServiceMap ;
-    private         VetServiceMap vetServiceMap ;
-    private         PetServiceMap petServiceMap ;
-    private         PetTypeServiceMap petTypeServiceMap;
+    private         OwnerService ownerService ;
+    private VetService vetService ;
+    private PetService petService ;
+    private PetTypeService petTypeService;
     private  final SpecialtyService specialtyService;
+    private final VisitService  visitService;
 
-
-    public BootStrap(OwnerServiceMap ownerServiceMap, VetServiceMap vetServiceMap, PetServiceMap petServiceMap, PetTypeServiceMap petTypeServiceMap, SpecialtyService specialtyService) {
-        this.ownerServiceMap = ownerServiceMap;
-        this.vetServiceMap = vetServiceMap;
-        this.petServiceMap = petServiceMap;
-        this.petTypeServiceMap = petTypeServiceMap;
+    public BootStrap(OwnerService ownerService, VetService vetService, PetService petService,
+                     PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
+        this.petService = petService;
+        this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -40,12 +42,12 @@ public class BootStrap implements CommandLineRunner {
     private void loadData() {
         PetType dog = new PetType();
         dog.setName("Dog");
-        PetType savedDogPetType = petTypeServiceMap.save(dog);
+        PetType savedDogPetType = petTypeService.save(dog);
 
         PetType cat = new PetType();
         dog.setName("Cat");
         cat.setName("Cat");
-        PetType  savedCatPetType = petTypeServiceMap.save(cat);
+        PetType  savedCatPetType = petTypeService.save(cat);
 
         Speciality radiology = new Speciality();
         radiology.setSpecialityName("Radiology");
@@ -72,7 +74,7 @@ public class BootStrap implements CommandLineRunner {
         mikesPet.setBirthDate(LocalDate.now());
         mikesPet.setName("Rosco");
         owner1.getPets().add(mikesPet);
-        ownerServiceMap.save(owner1);
+        ownerService.save(owner1);
 
 
         Owner owner2 = new Owner();
@@ -90,19 +92,25 @@ public class BootStrap implements CommandLineRunner {
         owner2.getPets().add(fionasCat);
 
 
-        ownerServiceMap.save(owner2);
+        ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setLastVisitDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+        catVisit.setPet(fionasCat);
+        visitService.save(catVisit);
 
         System.out.println("Loaded Owners....");
 
         Vet vet1= new Vet();
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
-        vetServiceMap.save(vet1);
+        vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
-        vetServiceMap.save(vet2);
+        vetService.save(vet2);
 
         System.out.println("Loaded Vets...");
     }
