@@ -62,6 +62,6 @@ class OwnerServiceMapTest {
         Owner owner5 = Owner.builder().id(4l).lastName("lastName").build();
 
         ownerServiceMap.save(owner5);
-        assertNotNull(ownerServiceMap.findByLastName(lastName));
+        assertNotNull(ownerServiceMap.findByLastName("lastName"));
     }
 }
