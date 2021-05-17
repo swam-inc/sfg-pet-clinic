@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="guru.springframework.sfgpetclinic.model.PersonTest" time="0.311" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="guru.springframework.sfgpetclinic.service.map.OwnerServiceMapTest" time="0.005" tests="6" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -53,36 +53,14 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="59.0"/>
   </properties>
-  <testcase name="guru.springframework.sfgpetclinic.model.PersonTest" classname="guru.springframework.sfgpetclinic.model.PersonTest" time="0.31">
-    <error message="Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
-</error>
-    <system-out><![CDATA[14:18:18.179 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-14:18:18.196 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-14:18:18.215 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [guru.springframework.sfgpetclinic.model.PersonTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-14:18:18.231 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [guru.springframework.sfgpetclinic.model.PersonTest], using SpringBootContextLoader
-14:18:18.236 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [guru.springframework.sfgpetclinic.model.PersonTest]: class path resource [guru/springframework/sfgpetclinic/model/PersonTest-context.xml] does not exist
-14:18:18.237 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [guru.springframework.sfgpetclinic.model.PersonTest]: class path resource [guru/springframework/sfgpetclinic/model/PersonTestContext.groovy] does not exist
-14:18:18.237 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [guru.springframework.sfgpetclinic.model.PersonTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-14:18:18.238 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [guru.springframework.sfgpetclinic.model.PersonTest]: PersonTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:18:18.280 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [guru.springframework.sfgpetclinic.model.PersonTest]
-14:18:18.327 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-14:18:18.327 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-14:18:18.327 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [guru.springframework.sfgpetclinic.model.PersonTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-14:18:18.328 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [guru.springframework.sfgpetclinic.model.PersonTest], using SpringBootContextLoader
-14:18:18.328 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [guru.springframework.sfgpetclinic.model.PersonTest]: class path resource [guru/springframework/sfgpetclinic/model/PersonTest-context.xml] does not exist
-14:18:18.329 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [guru.springframework.sfgpetclinic.model.PersonTest]: class path resource [guru/springframework/sfgpetclinic/model/PersonTestContext.groovy] does not exist
-14:18:18.329 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [guru.springframework.sfgpetclinic.model.PersonTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-14:18:18.329 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [guru.springframework.sfgpetclinic.model.PersonTest]: PersonTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:18:18.331 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [guru.springframework.sfgpetclinic.model.PersonTest]
-14:18:18.340 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-14:18:18.340 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-14:18:18.341 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [guru.springframework.sfgpetclinic.model.PersonTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-14:18:18.343 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [guru.springframework.sfgpetclinic.model.PersonTest], using SpringBootContextLoader
-14:18:18.344 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [guru.springframework.sfgpetclinic.model.PersonTest]: class path resource [guru/springframework/sfgpetclinic/model/PersonTest-context.xml] does not exist
-14:18:18.345 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [guru.springframework.sfgpetclinic.model.PersonTest]: class path resource [guru/springframework/sfgpetclinic/model/PersonTestContext.groovy] does not exist
-14:18:18.345 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [guru.springframework.sfgpetclinic.model.PersonTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-14:18:18.346 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [guru.springframework.sfgpetclinic.model.PersonTest]: PersonTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:18:18.349 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [guru.springframework.sfgpetclinic.model.PersonTest]
-]]></system-out>
+  <testcase name="delete" classname="guru.springframework.sfgpetclinic.service.map.OwnerServiceMapTest" time="0"/>
+  <testcase name="findAll" classname="guru.springframework.sfgpetclinic.service.map.OwnerServiceMapTest" time="0"/>
+  <testcase name="findById" classname="guru.springframework.sfgpetclinic.service.map.OwnerServiceMapTest" time="0.001"/>
+  <testcase name="save" classname="guru.springframework.sfgpetclinic.service.map.OwnerServiceMapTest" time="0"/>
+  <testcase name="findByLastName" classname="guru.springframework.sfgpetclinic.service.map.OwnerServiceMapTest" time="0.001">
+    <failure message="expected: not &lt;null&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: not <null>
+	at guru.springframework.sfgpetclinic.service.map.OwnerServiceMapTest.findByLastName(OwnerServiceMapTest.java:65)
+]]></failure>
   </testcase>
+  <testcase name="deleteById" classname="guru.springframework.sfgpetclinic.service.map.OwnerServiceMapTest" time="0"/>
 </testsuite>
