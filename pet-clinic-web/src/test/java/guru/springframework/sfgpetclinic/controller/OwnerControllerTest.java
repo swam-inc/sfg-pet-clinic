@@ -1,6 +1,7 @@
 package guru.springframework.sfgpetclinic.controller;
 
 import guru.springframework.sfgpetclinic.model.Owner;
+import guru.springframework.sfgpetclinic.service.OwnerService;
 import guru.springframework.sfgpetclinic.service.map.OwnerServiceMap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(MockitoExtension.class)
 class OwnerControllerTest {
     @Mock
-    OwnerServiceMap ownerServiceMap;
+    OwnerService ownerService;
 
     @InjectMocks
     OwnerController ownerController;
@@ -46,7 +47,7 @@ class OwnerControllerTest {
 
     @Test
     void getIndex() throws Exception {
-        when(ownerServiceMap.findAll()).thenReturn(owners);
+        when(ownerService.findAll()).thenReturn(owners);
         mockMvc.perform(MockMvcRequestBuilders.get("/owner"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("owner/index"))
@@ -64,6 +65,6 @@ class OwnerControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/oups"))
                 .andExpect(view().name("generic_not_found_page"))
          .andExpect(status().isOk());
-        verifyZeroInteractions(ownerServiceMap);
+        verifyZeroInteractions(ownerService);
     }
 }
