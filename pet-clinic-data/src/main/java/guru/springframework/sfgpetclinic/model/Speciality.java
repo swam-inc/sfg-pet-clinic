@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
-//@Entity
-@MappedSuperclass
+@Entity
+//@MappedSuperclass
 @Table(name="speciality")
 public class Speciality extends  BaseEntity{
     @Column(name="speciality_name")

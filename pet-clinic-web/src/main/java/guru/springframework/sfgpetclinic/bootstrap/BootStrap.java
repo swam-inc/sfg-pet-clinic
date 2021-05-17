@@ -61,12 +61,9 @@ public class BootStrap implements CommandLineRunner {
         dentistry.setSpecialityName("Dentistry");
         specialtyService.save(dentistry);
 
-        Owner owner1 = new Owner();
-        owner1.setFirstName("Michael");
-        owner1.setLastName("Weston");
-        owner1.setAddress("123 Brickerel");
-        owner1.setCity("Miami");
-        owner1.setTelephone("1231231234");
+        Owner owner1 = Owner.builder().id(1l).firstName("Michael").lastName("Weston")
+                .address("123 Brickerel").city("Miami").telephone("1231231234").build();
+
 
         Pet mikesPet = new Pet();
         mikesPet.setPetType(savedDogPetType);
@@ -77,13 +74,9 @@ public class BootStrap implements CommandLineRunner {
         ownerService.save(owner1);
 
 
-        Owner owner2 = new Owner();
-        owner2.setFirstName("Fiona");
-        owner2.setLastName("Glenanne");
-        owner2.setAddress("123 Brickerel");
-        owner2.setCity("Miami");
 
-        owner2.setTelephone("12312231234");
+        Owner owner2 = Owner.builder().id(2l).firstName("Fiona").lastName("Glenanne")
+                .address("123 Brickerel").city("Miami").telephone("1231231234").build();
         Pet fionasCat = new Pet();
         fionasCat.setName("Just Cat");
         fionasCat.setOwner(owner2);

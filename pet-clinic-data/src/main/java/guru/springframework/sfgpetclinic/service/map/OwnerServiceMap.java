@@ -55,7 +55,8 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
     public Owner findByLastName(String lastName){
         for ( Long id : map.keySet()){
-            if (map.get(id).getLastName().equals(lastName)){ return map.get(id); }
+            if (map.get(id).getLastName() != null &&
+                    map.get(id).getLastName().equals(lastName)){ return map.get(id); }
         }
         return  null;
     }

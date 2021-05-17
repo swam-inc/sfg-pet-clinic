@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Service
@@ -22,12 +23,14 @@ public class OwnerSDJpa implements OwnerService {
 
     @Override
     public Owner findById(Long aLong) {
-        return ownerRepository.findById(aLong);
+        return ownerRepository.findById(aLong).orElse(null);
     }
 
     @Override
     public Set<Owner> findAll() {
-        return ownerRepository.findAll();
+        Set<Owner> owners = new HashSet<>();
+        ownerRepository.findAll().forEach(owner -> owners.add(owner));
+        return owners;
     }
 
     @Override
@@ -42,7 +45,9 @@ public class OwnerSDJpa implements OwnerService {
 
     @Override
     public void deleteById(Long aLong) {
-        ownerRepository.delete(ownerRepository.findById(aLong));
+        if(ownerRepository.findById(aLong) != null){
+            ownerRepository.deleteById(aLong);
+        }
     }
 
     @Override

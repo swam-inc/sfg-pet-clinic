@@ -7,8 +7,8 @@ import java.util.Set;
 /**
  * Created by jt on 7/13/18.
  */
-//@Entity
-    @MappedSuperclass
+@Entity
+//    @MappedSuperclass
 @Table(name="vets")
 public class Vet extends Person {
     @ManyToMany(fetch = FetchType.EAGER)
